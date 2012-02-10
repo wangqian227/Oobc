@@ -1,32 +1,31 @@
 import java.util.ArrayList;
 
 public class ParkingLot {
-    private int account;  //the empty/all stall
-    private ArrayList<Car> parkingCars;
+    private final ArrayList<Car> parkingCars;
+    private final int space;
 
     public ParkingLot(int account) {  //tell us the full empty stall
         parkingCars = new ArrayList<Car>(account);
-        this.account = account;
+        this.space = account;
     }
 
     public int availableLots() {
-        return this.account;
+        return space - parkingCars.size();
     }
 
     public boolean acceptNewParkingCar(Car car) {
-        if (account > 0 && car != null){
+        if (availableLots() > 0 && car != null){
             parkingCars.add(car);
-            account--;
             return true;
         }
         return false;
     }
 
     public boolean parkingCarGoAway(Car car) {
-        if (parkingCars.remove(car)) {
-            account++;
-            return  true;
-        }
-        return false;
+        return parkingCars.remove(car);
+    }
+
+    public double emptyRate() {
+        return availableLots()/space;  //To change body of created methods use File | Settings | File Templates.
     }
 }

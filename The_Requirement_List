@@ -1,0 +1,9 @@
+The Second Day:
+1.It has a ParkingLot, and also has the two function: Park and UnPark.
+2.It has a Parker, two ParkingLot, and the Parker has a parkCar method.
+
+The Third Day:
+1.Refactor the code we wrote last day.
+2.It has a smart parker and he can park or un-park the car.
+3.It has a super smart parker, and he can park a car to parkingLot with highest vacancy rates.
+4.Refactor the code again.
