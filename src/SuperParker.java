@@ -5,7 +5,7 @@ public ParkingLot getParkingLotLa(ArrayList<ParkingLot> parkingLots) {
         double max = 0;
         ParkingLot parkingLotToPark = null;
         for (ParkingLot parkingLot : parkingLots) {
-            if (parkingLot.availableLots() > max) {
+            if (parkingLot.emptyRate() > max) {
                 max = parkingLot.emptyRate();
                 parkingLotToPark = parkingLot;
             }
